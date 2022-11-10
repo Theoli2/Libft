@@ -6,9 +6,11 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:05:57 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/07 21:44:12 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/10 04:00:37 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int ft_isdigit(char c)
 {

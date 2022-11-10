@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 21:31:02 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/10 04:00:40 by tlivroze         ###   ########.fr       */
+/*   Created: 2022/11/10 06:24:36 by tlivroze          #+#    #+#             */
+/*   Updated: 2022/11/10 08:39:07 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(char c)
+size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
-    if (c >= 48 && c <= 57)
-			return (0);
-    if (c > 122)
-        return (0);
-    if (c < 97 && c > 90)
-        return (0);
-    if (c < 65)
-        return (0);
-    return (1);    
+    size_t i;
+    size_t j;
+    
+    i = ft_strlen(dst);
+    j = 0;
+    if (size <= i)
+        return (size + ft_strlen((char *)src));
+    while (src[j] != '\0' && (i + j) < size - 1)
+    {
+        dst[i+j] = src[j];
+        j++;
+    }
+    dst[i+j] = '\0';
+    return (ft_strlen(dst) + ft_strlen((char *)&src[j]));
 }

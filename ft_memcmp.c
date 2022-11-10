@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 21:31:02 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/10 04:00:40 by tlivroze         ###   ########.fr       */
+/*   Created: 2022/11/10 12:10:33 by tlivroze          #+#    #+#             */
+/*   Updated: 2022/11/10 13:09:05 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(char c)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    if (c >= 48 && c <= 57)
-			return (0);
-    if (c > 122)
+    if (n == 0)
         return (0);
-    if (c < 97 && c > 90)
-        return (0);
-    if (c < 65)
-        return (0);
-    return (1);    
+    while (*(unsigned char *)s1 == *(unsigned char *)s2 && n > 1)
+    {
+        s1++;
+        s2++;
+        n--;
+    }
+    if (*(unsigned char *)s1 > *(unsigned char *)s2)
+        return (1);
+    if (*(unsigned char *)s1 < *(unsigned char *)s2)
+        return (-1);
+    return (0);
 }

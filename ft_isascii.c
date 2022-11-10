@@ -6,13 +6,15 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:06:13 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/08 22:21:35 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/10 04:06:55 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int ft_isascii(char c)
 {
-    if (c > 127)
+    if (c < 0)
         return (0);
     return (1);
 }
