@@ -6,21 +6,15 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 21:31:02 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/10 04:00:40 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/16 18:55:44 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(char c)
+int ft_isalnum(int c)
 {
-    if (c >= 48 && c <= 57)
-			return (0);
-    if (c > 122)
-        return (0);
-    if (c < 97 && c > 90)
-        return (0);
-    if (c < 65)
-        return (0);
-    return (1);    
+    if (ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
+        return (1);
+    return (0);
 }

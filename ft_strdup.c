@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 22:32:46 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/16 18:56:04 by tlivroze         ###   ########.fr       */
+/*   Created: 2022/11/14 23:04:01 by tlivroze          #+#    #+#             */
+/*   Updated: 2022/11/15 04:41:36 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-int    ft_isprint(int c)
+char	*ft_strdup(char *src)
 {
-    if (c >= 32 && c <= 126)
-        return (1);
-    return (0);
+	char	*dest;
+	int		i;
+
+	dest = malloc(ft_strlen((const char*)src) + 1 * sizeof(char));
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+    dest[i] = 0;
+	return (dest);
 }

@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 22:32:46 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/16 18:56:04 by tlivroze         ###   ########.fr       */
+/*   Created: 2022/11/17 03:45:29 by tlivroze          #+#    #+#             */
+/*   Updated: 2022/11/17 10:04:19 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int    ft_isprint(int c)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-    if (c >= 32 && c <= 126)
-        return (1);
-    return (0);
+	size_t	start;
+	size_t	end;
+
+	start = 0;
+	end = ft_strlen(s1) - 1;
+	if (s1 == NULL)
+		return (NULL);
+	while (ft_strchr(set, s1[start])!= NULL && s1[start] != '\0')
+		start++;
+	if (s1[start] == '\0')
+		return (ft_strdup(""));
+	while (ft_strchr(set, s1[end]) != NULL && end > 0)
+		end--;
+	return (ft_substr(s1,start,(end - start) + 1));
 }

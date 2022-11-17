@@ -6,13 +6,13 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:47:53 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/10 17:11:33 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/17 11:44:22 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	conv(char a)
+static int	conv(char a)
 {
 	int	i;
 

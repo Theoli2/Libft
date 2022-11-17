@@ -6,7 +6,7 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 09:00:55 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/10 13:54:16 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/15 04:42:35 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char *ft_strrchr(const char *s, int c)
 {
     size_t i;
 
-    i = ft_strlen((char *)s);
+    i = ft_strlen(s);
     while (i > 0 && s[i] != (char)c)
         i--;
     if (s[i] == (char)c)
