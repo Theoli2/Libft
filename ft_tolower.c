@@ -6,15 +6,15 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 08:49:09 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/10 08:51:35 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/18 22:51:17 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c > 64 && c < 91)
+	if (c > 64 && c < 91)
 		c = c + 32;
-    return (c);
+	return (c);
 }

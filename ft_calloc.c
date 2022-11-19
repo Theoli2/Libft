@@ -6,21 +6,21 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 18:55:55 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/17 04:24:04 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/18 22:40:04 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-void *ft_calloc (size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	const size_t	bytes = nmemb * size;
-    void    		*pointer;
+	void			*pointer;
 
-    if (size != 0 && nmemb > SIZE_MAX / size)
-        return (NULL);
-    pointer = malloc(bytes);
-    if (pointer)
-	    ft_bzero(pointer, bytes);
-    return (pointer);
+	if (size != 0 && nmemb > SIZE_MAX / size)
+		return (NULL);
+	pointer = malloc(bytes);
+	if (pointer)
+		ft_bzero(pointer, bytes);
+	return (pointer);
 }

@@ -6,7 +6,7 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 03:45:29 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/17 10:04:19 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/18 22:50:06 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ char	*ft_strtrim(const char *s1, const char *set)
 	end = ft_strlen(s1) - 1;
 	if (s1 == NULL)
 		return (NULL);
-	while (ft_strchr(set, s1[start])!= NULL && s1[start] != '\0')
+	while (ft_strchr(set, s1[start]) != NULL && s1[start] != '\0')
 		start++;
 	if (s1[start] == '\0')
 		return (ft_strdup(""));
 	while (ft_strchr(set, s1[end]) != NULL && end > 0)
 		end--;
-	return (ft_substr(s1,start,(end - start) + 1));
+	return (ft_substr(s1, start, (end - start) + 1));
 }
