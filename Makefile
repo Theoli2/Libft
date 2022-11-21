@@ -32,20 +32,19 @@ SRCS = ft_bzero.c \
 	ft_strjoin.c \
 	ft_strtrim.c \
 	ft_split.c
-	
+
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(SRCS)
 	$(CC) $(FLAGS) -c $(SRCS)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	ar rcs $(NAME) $(OBJS)
 
 clean :
 	rm -f $(OBJS)
-	
-fclean : clean 
+
+fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
@@ -55,4 +54,3 @@ so:
 	@gcc -shared -o libft.so $(OBJS)
 
 .PHONY : all clean fclean re
-	
