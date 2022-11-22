@@ -6,7 +6,7 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:47:53 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/21 01:15:19 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/22 08:41:29 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_atoi(const char *nptr)
 	n = 1;
 	while ((*nptr >= 9 && *nptr <= 15) || *nptr == 32)
 		nptr++;
-	if (*nptr == 45 || *nptr == 43 )
+	if (*nptr == 45 || *nptr == 43)
 	{
 		if (*nptr == 45)
 			n = -1;

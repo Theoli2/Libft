@@ -6,7 +6,7 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:09:45 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/21 04:16:04 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/22 08:41:20 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	if (!*little)
 		return ((char *)big);
 	i = ft_strlen(little);
-	while (*big != '\0' && len >= i )
+	while (*big != '\0' && len >= i)
 	{
 		if (*big == *little && ft_memcmp(big, little, i) == 0)
 			return ((char *)big);

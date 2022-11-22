@@ -3,8 +3,6 @@ NAME = libft.a
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
 
-INCLDS = includes
-
 SRCS = ft_bzero.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
@@ -31,18 +29,33 @@ SRCS = ft_bzero.c \
 	ft_substr.c \
 	ft_strjoin.c \
 	ft_strtrim.c \
-	ft_split.c
+	ft_split.c \
+	ft_itoa.c \
+	ft_strmapi.c \
+	ft_striteri.c \
+	ft_putchar_fd.c \
+	ft_putstr_fd.c \
+	ft_putendl_fd.c \
+	ft_putnbr_fd.c \
+
+BONUS = ft_lstnew.c \
 
 OBJS = $(SRCS:.c=.o)
 
-all: $(NAME)
+OBJSBONUS = $(BONUS:.c=.o)
 
 $(NAME): $(SRCS)
 	$(CC) $(FLAGS) -c $(SRCS)
 	ar rcs $(NAME) $(OBJS)
 
+all: $(NAME)
+
+bonus: $(NAME)
+	$(CC) $(FLAGS) -c $(BONUS)
+	ar rs $(NAME) $(OBJSBONUS)
+
 clean :
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJSBONUS)
 
 fclean : clean
 	rm -f $(NAME)
@@ -50,7 +63,7 @@ fclean : clean
 re : fclean all
 
 so:
-	@$(CC) -fPIC $(CFLAGS) $(SRCS)
-	@gcc -shared -o libft.so $(OBJS)
+	@$(CC) -fPIC $(CFLAGS) $(SRCS) $(BONUS)
+	@gcc -shared -o libft.so $(OBJS) $(OBJSBONUS)
 
 .PHONY : all clean fclean re
