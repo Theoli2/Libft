@@ -6,7 +6,7 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:24:26 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/22 08:39:55 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/24 00:27:29 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static char	*ft_strdupp(char *src, char charset)
 	return (dest);
 }
 
-char	**free_error(char **tab, int pos)
+static char	**free_error(char **tab, int pos)
 {
 	int	i;
 
