@@ -6,7 +6,7 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 07:06:06 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/23 23:46:13 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/25 21:19:46 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*result;
 
+	if (!s)
+		return (NULL);
 	result = malloc(ft_strlen(s) + 1);
+	if (!result)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
