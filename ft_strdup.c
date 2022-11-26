@@ -6,7 +6,7 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 23:04:01 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/25 22:19:00 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/26 01:48:58 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,10 @@
 
 char	*ft_strdup(char *src)
 {
-	char	*dest;
-	int		i;
+	const size_t	len_src = ft_strlen(src);
+	char *const		dest = (char *const)malloc((len_src + 1) * sizeof(char));
 
-	dest = malloc(ft_strlen((const char *)src) + 1 * sizeof(char));
-	if (!dest)
-		return (NULL);
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = 0;
+	if (dest != NULL)
+		ft_strlcpy(dest, src, len_src + 1);
 	return (dest);
 }

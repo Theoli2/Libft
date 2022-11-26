@@ -6,7 +6,7 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 06:24:36 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/23 23:16:14 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/26 12:19:42 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	i;
 	size_t	j;
 
-	i = ft_strlen(dst);
+	if (dst)
+		i = ft_strlen(dst);
+	else
+		i = 0;
 	j = 0;
 	if (size <= i)
 		return (size + ft_strlen((const char *)src));

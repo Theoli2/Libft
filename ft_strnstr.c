@@ -6,7 +6,7 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:09:45 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/22 08:41:20 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/26 14:06:11 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 
+	if (!big && len == 0)
+		return (NULL);
 	if (!*little)
 		return ((char *)big);
 	i = ft_strlen(little);

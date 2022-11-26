@@ -6,7 +6,7 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:37:04 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/22 08:38:22 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/26 01:52:20 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	n;
+	size_t	len;
 
-	n = 0;
-	while (s[n] != '\0')
-		n++;
-	return (n);
+	len = 0;
+	while (s[len] != '\0')
+		++len;
+	return (len);
 }

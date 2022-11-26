@@ -1,7 +1,7 @@
 NAME = libft.a
 
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_bzero.c \
 	ft_isalnum.c \
@@ -52,22 +52,35 @@ OBJS = $(SRCS:.c=.o)
 
 OBJSBONUS = $(BONUS:.c=.o)
 
-$(NAME): $(SRCS)
-	$(CC) $(FLAGS) -c $(SRCS)
-	ar rcs $(NAME) $(OBJS)
+HEADER = libft.h
 
 all: $(NAME)
 
-bonus: $(NAME)
-	$(CC) $(FLAGS) -c $(BONUS)
-	ar rs $(NAME) $(OBJSBONUS)
+bonus: $(NAMEBONUS) $(OBJSBONUS)
+	ar rcs $(NAME) $(OBJSBONUS)
+
+$(NAME): $(OBJS)
+	ar rcs $@ $^
+
+$(OBJS): %.o: %.c $(HEADER)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJSBONUS): %.o: %.c $(HEADER)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+
 
 clean :
-	rm -f $(OBJS) $(OBJSBONUS)
+	$(RM) $(OBJS) $(OBJSBONUS)
 
 fclean : clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
-re : fclean all
+re : fclean
+	$(MAKE)
+	
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(OBJSBONUS)
 
-.PHONY : all clean fclean re
+.PHONY : all clean fclean re bonus

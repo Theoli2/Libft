@@ -6,7 +6,7 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:24:26 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/25 20:41:43 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/26 12:16:49 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (!s)
+		return (NULL);
 	tab = malloc ((countwords((char *)s, c) + 1) * sizeof(char *));
 	if (!tab)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: tlivroze <tlivroze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:01:41 by tlivroze          #+#    #+#             */
-/*   Updated: 2022/11/22 08:38:51 by tlivroze         ###   ########.fr       */
+/*   Updated: 2022/11/26 08:36:02 by tlivroze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,5 @@
 
 int	ft_isalpha(int c)
 {
-	if (c > 122)
-		return (0);
-	if (c < 97 && c > 90)
-		return (0);
-	if (c < 65)
-		return (0);
-	return (1);
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
